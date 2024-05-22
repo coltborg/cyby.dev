@@ -1,2 +1,8 @@
-/* Custom styles */
+body {
+    background: Canvas;
+    color: CanvasColor;
+}
 
+h1 {
+    border-bottom: 10px solid LinkText;
+}
