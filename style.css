@@ -1,8 +1,16 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --dark-grey: #1e1e1e;
+    --link-blue: #0000ee;
+    --red: red;
+}
+
 body {
-    background: Canvas;
-    color: CanvasText;
+    background: light-dark(var(--white), var(--dark-grey));
+    color: light-dark(var(--black), var(--white));
 }
 
 h1 {
-    border-bottom: 10px solid LinkText;
+    border-bottom: 10px solid light-dark(var(--link-blue), var(--red));
 }
