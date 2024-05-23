@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "install",
+            "group": "clean",
+            "problemMatcher": [],
+            "label": "npm: install",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "detail": "install dependencies from package"
+        },
+        {
+            "label": "Run 11ty server",
+            "type": "shell",
+            "command": "npx @11ty/eleventy --serve",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
