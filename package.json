@@ -4,7 +4,6 @@
     "description": "A blog about tech and stuff.",
     "main": "index.js",
     "scripts": {
-        "install": "npm install",
         "serve": "npx @11ty/eleventy --serve",
         "build": "npx @11ty/eleventy"
     },
