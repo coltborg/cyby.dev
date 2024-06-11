@@ -21,23 +21,25 @@ jobs:
                 with:
                     node-version: "18"
 
-#            -   name: Persist npm cache
-#                uses: actions/cache@v3
-#                with:
-#                    path: ~/.npm
-#                    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-#                    restore-keys: |
-#                        ${{ runner.os }}-node-
+            #            -   name: Persist npm cache
+            #                uses: actions/cache@v3
+            #                with:
+            #                    path: ~/.npm
+            #                    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            #                    restore-keys: |
+            #                        ${{ runner.os }}-node-
 
-#            -   name: Persist Eleventy .cache
-#                uses: actions/cache@v3
-#                with:
-#                    path: ./.cache
-#                    key: ${{ runner.os }}-eleventy-fetch-cache
+            #            -   name: Persist Eleventy .cache
+            #                uses: actions/cache@v3
+            #                with:
+            #                    path: ./.cache
+            #                    key: ${{ runner.os }}-eleventy-fetch-cache
 
-            -   run: npm install
+            -   name: Install dependencies
+                run: npm install
 
-            -   run: npm run build
+            -   name: Build project
+                run: npm run build
 
             -   name: Deploy
                 uses: peaceiris/actions-gh-pages@v3
