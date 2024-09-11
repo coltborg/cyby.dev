@@ -44,3 +44,5 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./_site
+                  publish_branch: main
+                  cname: cyby.dev
