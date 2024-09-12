@@ -102,6 +102,7 @@ pre {
 }
 
 .layout {
+    margin-block-end: 4rem;
     display: grid;
     grid-template-columns:
         minmax(1.5rem, 1fr) [content-start] minmax(auto, 100ch)

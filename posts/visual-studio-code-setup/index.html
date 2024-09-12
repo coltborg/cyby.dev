@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Visual Studio Code Setup | Cyby.dev</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>"
+        />
+        <link href="/styles/reset.css" rel="stylesheet" />
+        <link href="/styles/style.css" rel="stylesheet" />
+        <link href="/styles/large.css" media="only screen and (min-width: 600px)" rel="stylesheet" />
+    </head>
+    <body>
+        <a href="#main" class="skip">Skip to main content</a>
+        <header>
+            <h1><a href="/">cyby.dev</a></h1>
+            <!-- <nav>
+                <ul>
+                    <li><a href="/blog">blog</a></li>
+                </ul>
+            </nav> -->
+            <div class="triangle"></div>
+        </header>
+        <main id="main" class="stack layout">
+            <h1>Visual Studio Code Setup</h1>
+<p>I've been using <a href="https://code.visualstudio.com/">Visual studio code (VSCode)</a> since 2017. It has been one of my all time favorite text editors. This year I decided to look through my set up and document what I use.</p>
+<h2>Extensions</h2>
+<h3>Bracket pair colorizer 2</h3>
+<p><img src="./bracket-pair-colorizer-2.png" alt="Bracket pair colorizing nested methods"></p>
+<p>This <a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2">extension</a> is great for focusing on what block of code your looking in. I have some of the more verbose settings enabled so that I can see a lot of colors as I navigate through code. This is especially helpful when I have several nested <code>functions</code> or <code>objects</code> within each other.</p>
+<h3>Change-case</h3>
+<p><img src="./change-case.png" alt="Change-case extension in the visual studio code store"></p>
+<p>I use this <a href="https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case">extension</a> via the command palette a lot. Many times I need to transform a pascal case vue.js component into kebab case or vice versa.</p>
+<h3>Code spell checker</h3>
+<p><img src="./code-spell-checker.png" alt="Code spell checker in the visual studio code store"></p>
+<p>In the course of typing, I make a lot of spelling mistakes. This <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">extension</a> is a life saver. Plus it helps find little bugs due to typos.</p>
+<h3>ESLint</h3>
+<p><img src="./eslint.png" alt="ESLint extension in the visual studio code store"></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint</a> is an essential extension for any JavaScript-based project. Getting all the settings to work are a pain in the ass sometimes, but I couldn't live without it.</p>
+<h3>Headwind</h3>
+<p><img src="./headwind.png" alt="Headwind in the visual studio code store"></p>
+<p>This <a href="https://marketplace.visualstudio.com/items?itemName=heybourn.headwind">extension</a> helps me align my tailwind classes in the same order without having to thing about it. It doesn’t seem like much, but the consistency of the order without having to think about is awesome.</p>
+<h3>Tailwind CSS intelliSence</h3>
+<p><img src="./tailwind-css-intellisense.png" alt="Tailwind CSS intelliSence in the visual studio code store"></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">IntelliSence</a> is a great feature of VSCode. Why not have it know about my Tailwind classes? Very useful for remembering the number differences for spacing and colors.</p>
+<h3>Toggle quotes</h3>
+<p><img src="./toggle-quotes.png" alt="Toggle quotes in the visual studio code store"></p>
+<p>This <a href="https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes">extension</a> seems like it would be native to VSCode along with all the other text transformation tools. I can easily switch between single quotes, double quotes, and back ticks. I even like the default keyboard shortcut <code>control + ‘</code>.</p>
+<h3>Vetur</h3>
+<p><img src="./vetur.png" alt="Vetur is the perfect Vue integration extension"></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur">Vetur</a> gives you easy integration with all things Vue in VSCode. It's an essential extension for working with Vue projects. What are you waiting for, download this package right now!</p>
+<h3>Vscode-icons</h3>
+<p><img src="./vscode-icons.png" alt="Example of vscode-icons for vue, javascript, etc"></p>
+<p>I've used the <a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icon</a> set since I started using Visual Studio Code. I'm so used to them now, I don't want to switch.</p>
+<h3>Vue vscode snippets</h3>
+<p><img src="./vue-vscode-snippets.png" alt="Vue vscode snippets is the best collection of snippets for the Vue.js language"></p>
+<p>The <a href="https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets">best snippet</a> package for Vue.js. I sometimes forget the format of certain features because this package has so many good snippets.</p>
+<h3>Quick and simple text selection</h3>
+<p><img src="./quick-and-simple-text-selection.png" alt="Quick and simple text selection in the visual studio code store"></p>
+<p>I've used this <a href="https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select">extension</a> so much I thought it was baked into VSCode! It makes selecting text within characters—think <code>''</code>, <code>&quot;&quot;</code>, <code>[]</code>, and <code>()</code>—a keyboard shortcut away. When I have to do a lot of irregular find and replace tasks, this extension haves my life.</p>
+<h3>Text Marker</h3>
+<p><img src="./text-marker.png" alt="Text marker extension in the visual studio code store"></p>
+<p>Sometimes I need to highlight a piece of code to copy, refactor, delete, etc. This <a href="https://marketplace.visualstudio.com/items?itemName=ryu1kn.text-marker">extension</a> does the trick! I try to use it sparingly and clear all highlights when I'm done.</p>
+<h2>Font</h2>
+<p><img src="./font-victor-mono.png" alt="Victor mono landing page"></p>
+<p><a href="https://rubjo.github.io/victor-mono/">Victor mono</a> was my most used font in 2019. Along with the ligatures and the cursive italic variant, the large x-height makes it easy for me to read.</p>
+<p>If it works well for you, consider donating to the creator.</p>
+<h3>Italic cursive face not working in VSCode</h3>
+<p>(Mar 12, 2020 Update)</p>
+<p>There is a bug with <a href="https://github.com/microsoft/vscode/issues/82122">VSCode font rendering for macOS</a>. If this is happening for you, there is a simple work around. Open up the Font Book app, find the Victor Mono font and disable or delete all &quot;oblique&quot; faces. The &quot;oblique&quot; faces were getting applied instead of the &quot;italic&quot; faces.</p>
+<p><img src="./disable-oblique-faces.png" alt="Disable oblique faces inside of font book for macOS"></p>
+<h2>Themes</h2>
+<p>I like color themes. I like having a lot of color themes to choose from. I like light themes for when the sun is out and there is a glare from the window. I like dark themes for the rest of the time.</p>
+<p>I tried to stick with one theme for a little while, but I can never make one last. So I keep a handful around and change whenever I feel like it—the <code>cmd + k cmd + t</code> shortcut is handy for quick switching.</p>
+<h3>Cobalt2</h3>
+<p><img src="./theme-cobalt2.png" alt="A Vue.js file with the cobalt2 theme active"></p>
+<p>A classic blue and yellow <a href="https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2">theme</a> from <a href="https://wesbos.com/">Wes Bos</a>. I tend to not use it, as I think it's too bright for me. But it has a great highlight search color when doing a &quot;Find in files&quot;.</p>
+<h3>Dracula</h3>
+<p><img src="./theme-dracula.png" alt="A Vue.js file with the Dracula theme active"></p>
+<p>Great dark <a href="https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula">theme</a> with purples and pinks. This theme puts a solid vertical pink line between editors when you're in split mode, which I really like. So when I am working with two or three splits for long periods of time, I switch to this theme.</p>
+<h3>Monokai pro</h3>
+<p><img src="./theme-monokai-pro.png" alt="A Vue.js file with the monokai pro theme active"></p>
+<p>This <a href="https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode">theme</a> costs money, but there is a free trial. I'd say it is well worth it since it comes with an icon theme—which I don't use. This is my &quot;home base&quot; theme. I might not use it all the time, but I always come back to it eventually.</p>
+<h3>Light owl</h3>
+<p><img src="./theme-light-owl.png" alt="A Vue.js file with the light owl theme active"></p>
+<p>My favorite light theme. Just enough color to be nice, but everything is still readable. It comes with <a href="https://marketplace.visualstudio.com/items?itemName=sdras.night-owl">Night Owl</a>, so a two for one situation.</p>
+<h3>Night owl</h3>
+<p><img src="./theme-night-owl.png" alt="A Vue.js file with the night owl theme active"></p>
+<p>A great <a href="https://marketplace.visualstudio.com/items?itemName=sdras.night-owl">theme</a> for late night coding. <a href="https://sarahdrasnerdesign.com/">Sarah Drasner</a> really put a lot of TLC into this theme.</p>
+<h3>Overnight Slumber Italics</h3>
+<p><img src="./theme-overnight-slumber-italics.png" alt="A Vue.js file with the overnight slumber italics theme active"></p>
+<p>I haven't used this theme very much, but I like the peach and purple vibe of <a href="https://marketplace.visualstudio.com/items?itemName=cev.overnight">this theme</a>. I think I like the &quot;slumber&quot; alternative better than the base theme.</p>
+<h3>SynthWave '84</h3>
+<p><img src="./theme-synthwave.png" alt="A Vue.js file with the synth wave '84 theme active"></p>
+<p>SUPER POP COLORS! When I really need to tell the difference between variables and functions, I turn on <a href="https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode">this theme</a>. I don't turn on the custom glow CSS because glow is very distracting to me.</p>
+<h2>Thanks for reading</h2>
+<p>Next up I'll be writing up what keyboard shortcuts I use and customized to save myself time.</p>
+<p>What extensions/themes do you use for VSCode? I'd love to hear about your setup!</p>
+
+        </main>
+    </body>
+</html>

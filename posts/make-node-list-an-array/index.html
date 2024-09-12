@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Make node list into an array | Cyby.dev</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>"
+        />
+        <link href="/styles/reset.css" rel="stylesheet" />
+        <link href="/styles/style.css" rel="stylesheet" />
+        <link href="/styles/large.css" media="only screen and (min-width: 600px)" rel="stylesheet" />
+    </head>
+    <body>
+        <a href="#main" class="skip">Skip to main content</a>
+        <header>
+            <h1><a href="/">cyby.dev</a></h1>
+            <!-- <nav>
+                <ul>
+                    <li><a href="/blog">blog</a></li>
+                </ul>
+            </nav> -->
+            <div class="triangle"></div>
+        </header>
+        <main id="main" class="stack layout">
+            <h1>Make node list into an array</h1>
+<p>Most of the time when I'm coding with <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">node lists</a>, I want to iterate through each of them and preform some action. My first thought is, &quot;Node lists are <em>like</em> arrays, I should be able to use the array methods like <code>.map()</code> or <code>.filter()</code> right?&quot; 🤔</p>
+<p>But every time it backfires because Node lists are actually objects.</p>
+<pre><code class="language-javascript">const nodeArray = document.querySelectorAll('p');
+
+nodeArray.map(node =&gt; console.log(node);
+// ❗️TypeError: nodeArray.map is not a function
+</code></pre>
+<p>To quickly fix this, I could either use the <code>.forEach()</code> method instead of <code>.map()</code>.</p>
+<pre><code class="language-javascript">const nodeArray = document.querySelectorAll('p');
+
+nodeArray.forEach(node =&gt; console.log(node);
+// ✅ That works!
+</code></pre>
+<p>Or I could quickly turn the node list into an array using the <code>spread operator</code>.</p>
+<pre><code class="language-javascript">const nodeArray = document.querySelectorAll('p');
+const realArray = [...nodeArray];
+
+realArray.map(node =&gt; console.log(node);
+// ✅ That works!
+</code></pre>
+
+        </main>
+    </body>
+</html>

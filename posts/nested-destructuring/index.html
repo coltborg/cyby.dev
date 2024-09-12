@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Nested Destructuring | Cyby.dev</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>"
+        />
+        <link href="/styles/reset.css" rel="stylesheet" />
+        <link href="/styles/style.css" rel="stylesheet" />
+        <link href="/styles/large.css" media="only screen and (min-width: 600px)" rel="stylesheet" />
+    </head>
+    <body>
+        <a href="#main" class="skip">Skip to main content</a>
+        <header>
+            <h1><a href="/">cyby.dev</a></h1>
+            <!-- <nav>
+                <ul>
+                    <li><a href="/blog">blog</a></li>
+                </ul>
+            </nav> -->
+            <div class="triangle"></div>
+        </header>
+        <main id="main" class="stack layout">
+            <h1>Nested Destructuring</h1>
+<p>I always forget the syntax for nested object destructuring. So I wrote this article so that I don't forget again.</p>
+<h2>Object Destructuring</h2>
+<blockquote>
+<p>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables. - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">MDN Destructuring assignment</a></p>
+</blockquote>
+<p>Destructing is one of my favorite ES6 syntax improvements. But when I need to pull things out of nested objects, I can never remember the syntax. So I'm writing this so I can focus on how to remember the syntax and so that I can refer to this article if I forget. 😆</p>
+<p>But first, lets looks at destructuring from one object.</p>
+<pre><code class="language-jsx">const MyAwesomeButton = props =&gt; (
+  &lt;button type=&quot;button&quot; className=&quot;button&quot;&gt;
+    {props.label}
+  &lt;/button&gt;
+)
+</code></pre>
+<p>Here we have <code>MyAwesomeButton</code> that takes a <code>label</code> prop and puts it inside of a <code>&lt;button&gt;</code>. We can use object destructing to only show the parts that we need to use, such as <code>label</code>.</p>
+<pre><code class="language-diff">+ const MyAwesomeButton = ({ label }) =&gt; (
+- const MyAwesomeButton = props =&gt; (
+  &lt;button type=&quot;button&quot; className=&quot;button&quot;&gt;
++   {label}
+-   {props.label}
+  &lt;/button&gt;
+)
+</code></pre>
+<p>Now we've eliminated the reference to <code>props</code> and are only pulling out <code>label</code> so that we can use it as a variable name by itself. We need to wrap <code>{ label }</code> in parentheses because without them, JavaScript would interpret it as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Creating_objects">object literal</a>.</p>
+<p>Our final result looks like:</p>
+<pre><code class="language-jsx">const MyAwesomeButton = ({ label }) =&gt; (
+  &lt;button type=&quot;button&quot; className=&quot;&quot;&gt;
+    {label}
+  &lt;/button&gt;
+)
+</code></pre>
+<h2>Now Lets Try Nesting</h2>
+<p>Here is where the syntax gets confusing. If I want to pull from an object within an object, I totally can, but I never remember the right way to do it.</p>
+<pre><code class="language-jsx">const MyAwesomeButton = props =&gt; (
+  &lt;button type=&quot;button&quot; className=&quot;button&quot;&gt;
+    {props.constants.icon}
+    {props.constants.label}
+  &lt;/button&gt;
+)
+</code></pre>
+<p>So now I have an object inside of my props that have two different values, but they're nested inside of an object.</p>
+<p>Before we look at how we can pull <code>icon</code> and <code>label</code> out of the prop, lets look at how an object literal is defined:</p>
+<pre><code class="language-javascript">const myObject = {
+  property: 'value',
+  nestedObject: {
+    nestedProperty: 'nested value'
+  }
+};
+</code></pre>
+<p>Ok we have curly braces, property names, and values. You can take the &quot;shape&quot; and apply it to how our destructuring will look.</p>
+<pre><code class="language-javascript">// Pseudo code of how we would pull out `nestedProperty`
+{
+  nestedObject: {
+    nestedProperty
+  }
+}
+</code></pre>
+<p>Now reduce that format to one line.</p>
+<pre><code class="language-javascript">{ nestedObject: { nestedProperty } }
+</code></pre>
+<p>💡 Ah ha! I usually forget when I need to add another set of curly braces to get to the nested property!</p>
+<p>Back to our React button example, I want to pull <code>icon</code> and <code>label</code> out of <code>props.constants</code>.</p>
+<pre><code class="language-diff">+ const MyAwesomeButton = { constants: { icon }, constants: { label }  } =&gt; (
+- const MyAwesomeButton = props =&gt; (
+  &lt;button type=&quot;button&quot; className=&quot;button&quot;&gt;
++   {icon}
+-   {props.constants.icon}
++   {label}
+-   {props.constants.label}
+  &lt;/button&gt;
+)
+</code></pre>
+<p>Our component now doesn't reference <code>props</code> or <code>constants</code> and has a cleaning look.</p>
+<pre><code class="language-jsx">const MyAwesomeButton = { constants: { icon }, constants: { label }  } =&gt; (
+  &lt;button type=&quot;button&quot; className=&quot;button&quot;&gt;
+    {icon}
+    {label}
+  &lt;/button&gt;
+)
+</code></pre>
+<h2>GatsbyJS Example</h2>
+<p>I got this wrong several times while building this website. Pulling from nested objects seems like a normal thing when working with GraphQL, the query language I'm using in Gatsby. I like how clean it looks, but it took a little while to get use to.</p>
+<p>Here is one of the craziest examples of nested destructuring that I had to do:</p>
+<pre><code class="language-jsx">{quotes.map(
+  ({
+    node: { avatar },
+    node: { company },
+    node: { id },
+    node: { person },
+    node: { quote },
+    node: { url },
+  }) =&gt; (
+    &lt;li key={id} className=&quot;mb-8&quot;&gt;
+      &lt;Quote
+        avatarAlt={`Avatar of ${person}`}
+        avatarUrl={avatar}
+        company={company}
+        linkUrl={url}
+        name={person}
+        quote={quote}
+      /&gt;
+    &lt;/li&gt;
+  )
+)}
+</code></pre>
+<p>For each quote, I'm pulling out each piece of data as its own variable and then using it where I need to. And there's not all these references to <code>node</code>, which I like.</p>
+<h2>Conclusion</h2>
+<p>The syntax for nested destructuring on the left side mirrors what defining a nested object would look like on the right side.</p>
+
+        </main>
+    </body>
+</html>
