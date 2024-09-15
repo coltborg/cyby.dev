@@ -243,8 +243,8 @@ nav {
 }
 
 blockquote {
-    border-left: 0.5rem solid light-dark(var(--dark-red), var(--yellow));
+    border-left: 0.3rem solid light-dark(var(--dark-red), var(--yellow));
     padding-inline-start: 1.5rem;
     padding-block: 1rem;
-    border-radius: var(--radius);
+    font-style: italic;
 }
