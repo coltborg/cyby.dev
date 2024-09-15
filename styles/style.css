@@ -218,17 +218,27 @@ nav {
     padding: 0;
     text-wrap: balance;
 
-    li {
+    > li {
         display: flex;
         flex-direction: column;
     }
 
-    a {
+    > li + li {
+        margin-block-start: 1.5rem;
+    }
+
+    .post-link {
         font-size: clamp(2rem, 5vi, 4rem);
         font-weight: 800;
         letter-spacing: -0.08rem;
         text-decoration-thickness: 7%;
-        text-decoration-color: light-dark(var(--dark-red), var(--yellow));
+        text-decoration-color: LinkText;
+        color: currentColor;
+
+        &:visited {
+            text-decoration-color: VisitedText;
+            color: currentColor;
+        }
 
         /* TODO: Decide on hover styling */
         &:hover,
@@ -238,7 +248,21 @@ nav {
     }
 
     time {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        /* color: light-dark(var(--dark-red), var(--yellow)); */
+        font-style: italic;
+    }
+}
+
+.tag-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    text-wrap: balance;
+
+    > li + li {
+        margin-inline-start: 0.5rem;
     }
 }
 
