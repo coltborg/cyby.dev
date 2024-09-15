@@ -92,6 +92,8 @@ pre {
     border-radius: var(--radius);
     max-inline-size: 120ch;
     background-color: #24273a;
+    white-space: pre-wrap;
+    word-break: break-word;
 
     > code {
         background-color: transparent;

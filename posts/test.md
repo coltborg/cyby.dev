@@ -1,5 +1,5 @@
 ---
-title: Markdown egg test
+title: Markdown test
 date: 2024-09-07
 ---
 
