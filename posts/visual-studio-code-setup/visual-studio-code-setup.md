@@ -1,6 +1,6 @@
 ---
 date: 2020-03-02
-tags: ['VSCode', 'Setup', 'Productivity']
+tags: ['vscode', 'setup', 'productivity']
 title: Visual Studio Code Setup
 description: "I've been using Visual studio code since 2017, I decided to look through my set up and document what I use."
 ---

@@ -1,6 +1,6 @@
 ---
 date: 2019-12-07
-tags: ['JavaScript']
+tags: javascript
 title: Make node list into an array
 description: "Make iterating through a set of DOM nodes easy by turning a Node List into an array."
 ---

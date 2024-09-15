@@ -1,0 +1,21 @@
+---
+title: index
+layout: layout.liquid
+---
+
+<h1>Posts</h1>
+
+<ul class="post-list">
+{%- for post in collections.post reversed -%}
+    <li>
+        <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
+        <time>{{ post.data.date | date: "%B %e, %Y"}}</time>
+        <ul class="tag-list">
+        <li aria-hidden="true">🔖</li>
+        {%- for tag in post.data.tags -%}
+            <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
+        {%- endfor %}
+        </ul>
+    </li>
+{%- endfor %}
+</ul>

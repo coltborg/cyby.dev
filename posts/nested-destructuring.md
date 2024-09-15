@@ -1,7 +1,7 @@
 ---
 title: Nested Destructuring
 date: 2019-06-22
-tags: JavaScript
+tags: javascript
 description: "I always forget the syntax for nested object destructuring. So I wrote this article so that I don't forget again."
 ---
 
